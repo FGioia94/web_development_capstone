@@ -1,0 +1,20 @@
+{
+  "Pop": 132,
+  "Rock": 152,
+  "Jazz": 129,
+  "Blues": 116,
+  "Classical": 98,
+  "Electronic": 106,
+  "Hip-Hop/Rap": 116,
+  "Reggae": 144,
+  "Soul & Funk": 169,
+  "Alternative": 85,
+  "Country": 84,
+  "Metal": 173,
+  "R&B": 165,
+  "Latin": 197,
+  "Folk": 466,
+  "Punk": 457,
+  "Lo-fi": 464,
+  "Ambient": 472
+}
