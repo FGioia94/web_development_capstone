@@ -1,0 +1,9 @@
+
+{| Sentiment Score | Music Genre | Emotion | 
+| +2 to +3 | Pop, Dance, EDM | Excited, energetic, happy | 
+| +1 to +2 | Acoustic, Indie | Warm, positive, reflective | 
+| 0 to +1 | Lo-fi, Jazz | Neutral, chill, casual | 
+| -1 to 0 | Blues, Classical | Melancholic, introspective | 
+| -2 to -1 | Emo, Rock Ballads | Sad, deep, expressive | 
+| -3 to -2 | Ambient, Experimental | Dark, mysterious, tense | 
+}
