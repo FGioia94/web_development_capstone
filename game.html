@@ -13,14 +13,25 @@
 </html>
 <body>
   <main>
-    <section class="loader" id="user-section">
-      <div></div>
-      <div class="moves-container"></div>
-    </section>
-    <section class="loader" id="cpu-section">
-      <div></div>
-      <div class="moves-container"></div>
-    </section>
+    <div id="game-container">
+      <div id="play-again-container" hidden>
+        <h2 id="win-lose-text"></h2>
+        <button id="play-again">Play Again</button>
+      </div>
+      <div id="game-area">
+        <section class="loader" id="user-section">
+          <div class="sprites-container"></div>
+          <div class="moves-container"></div>
+        </section>
+        <section class="loader" id="cpu-section">
+          <div class="sprites-container"></div>
+          <div class="moves-container"></div>
+        </section>
+        <section id="message-container">
+          <p id="message"></p>
+        </section>
+      </div>
+    </div>
   </main>
   <script src="./assets/js/game.js"></script>
 </body>
