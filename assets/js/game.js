@@ -56,6 +56,10 @@ let documentData = {};
 let counter = 0;
 
 async function main() {
+  const spriteContainers = document.getElementsByClassName("sprites-container");
+  [spriteContainers[0], spriteContainers[1]].forEach((container) => {
+    container.innerHTML = "";
+  });
   const gameArea = document.getElementById("game-area");
   const playAgainContainer = document.getElementById("play-again-container");
   gameArea.hidden = false;
@@ -99,9 +103,10 @@ async function main() {
     sprite.src = element.sprite;
     spritesContainer.appendChild(sprite);
     documentData[elementLabel]["moveButtons"] = [];
+    const movesContainer =
+      document.getElementsByClassName("moves-container")[index];
+    movesContainer.innerHTML = "";
     Object.keys(element.moves).forEach((move) => {
-      const movesContainer =
-        document.getElementsByClassName("moves-container")[index];
       const moveButton = document.createElement("button");
       documentData[elementLabel]["moveButtons"].push(moveButton);
 
@@ -117,6 +122,8 @@ async function main() {
 }
 
 function attack(attacker, move, target) {
+  lockButtons("player");
+  lockButtons("cpu");
   const message = document.getElementById("message");
   message.textContent = `${attacker.name} uses ${move}`;
 
@@ -124,49 +131,62 @@ function attack(attacker, move, target) {
   if (!target.isDead) {
     target.healthText.textContent = `HP ${target.hp}/${target.maxHp}`;
   } else {
-    console.log("hello");
     target.healthText.textContent = `HP 0/${target.maxHp}`;
-    setTimeout(3000);
+
     message.textContent = `${attacker.name} defeated ${target.name}`;
-    const gameArea = document.getElementById("game-area");
-    const playAgainContainer = document.getElementById("play-again-container");
-    gameArea.hidden = true;
+    setTimeout(() => {
+      const gameArea = document.getElementById("game-area");
+      const playAgainContainer = document.getElementById(
+        "play-again-container"
+      );
+      gameArea.hidden = true;
 
-    playAgainContainer.hidden = false;
-    const winLoseText = document.getElementById("win-lose-text");
+      playAgainContainer.hidden = false;
+      const winLoseText = document.getElementById("win-lose-text");
 
-    if (target.isCpu) {
-      winLoseText.textContent = "YOU WIN";
-    } else {
-      winLoseText.textContent = "YOU LOSE";
-    }
-    const playAgainButton = document.getElementById("play-again");
-    playAgainButton.onclick = () => {
-      main();
-    };
-    counter = 0;
+      if (target.isCpu) {
+        winLoseText.textContent = "YOU WIN";
+      } else {
+        winLoseText.textContent = "YOU LOSE";
+      }
+      const playAgainButton = document.getElementById("play-again");
+      playAgainButton.onclick = () => {
+        main();
+      };
+      message.textContent = "";
+      counter = 0;
+    }, 3000);
   }
   counter++;
-  unlockButtons();
-  processTurns();
+  if (!attacker.isDead && !target.isDead) {
+    processTurns();
+  }
 }
 
-function unlockButtons() {
-  ["player", "cpu"].forEach((element) => {
-    documentData[element]["moveButtons"].forEach((moveButton) => {
-      moveButton.disabled = false;
-    });
+function unlockButtons(target) {
+  documentData[target]["moveButtons"].forEach((moveButton) => {
+    moveButton.disabled = false;
+  });
+}
+function lockButtons(target) {
+  documentData[target]["moveButtons"].forEach((moveButton) => {
+    moveButton.disabled = true;
   });
 }
 function processTurns() {
   if (counter % 2 === 0) {
-    documentData["cpu"]["moveButtons"].forEach((moveButton) => {
-      moveButton.disabled = true;
-    });
+    unlockButtons("player");
+    lockButtons("cpu");
   } else {
     documentData["player"]["moveButtons"].forEach((moveButton) => {
       moveButton.disabled = true;
     });
+
+    const randomIndex = Math.floor(Math.random() * 4);
+    setTimeout(() => {
+      unlockButtons("cpu");
+      documentData["cpu"]["moveButtons"][randomIndex].click();
+    }, 1000);
   }
 }
 
