@@ -146,6 +146,18 @@ function attack(attacker, move, target) {
 
       if (target.isCpu) {
         winLoseText.textContent = "YOU WIN";
+
+        let defeatedList = localStorage.getItem("defeatedList");
+        defeatedList = defeatedList ? JSON.parse(defeatedList) : []; // Convert from string to array
+
+        if (!defeatedList.includes(target.name)) {
+          console.log(defeatedList);
+          defeatedList.push(target.name);
+
+          localStorage.setItem("defeatedList", JSON.stringify(defeatedList));
+
+          console.log(localStorage);
+        }
       } else {
         winLoseText.textContent = "YOU LOSE";
       }

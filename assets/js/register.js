@@ -1,26 +1,16 @@
 const form = document.querySelector("form");
 
-const userData = {
-  password: null,
-  winStreak: 0,
-  pokedex: [],
-};
 form.addEventListener("submit", function (event) {
   event.preventDefault();
   const email = document.getElementsByName("email-field")[0].value;
-  if (localStorage.getItem("users") === null) {
-    localStorage.setItem("users", JSON.stringify([]));
-    console.log(localStorage.users);
-  } else {
-    const users = JSON.parse(localStorage.getItem("users"));
-    if (users.includes(email)) {
-      alert("User already exists");
-      return;
-    } else {
 
-      localStorage.setItem("users", users.push(email));
-    }
+  const users = JSON.parse(localStorage.getItem("users"));
+  console.log(typeof localStorage.getItem(email));
+  if (localStorage.getItem(email) !== null) {
+    alert("User already exists");
+    return;
   }
+
   const password = document.getElementsByName("password-field")[0].value;
   const confirmPassword =
     document.getElementsByName("confirm-pw-field")[0].value;
@@ -28,8 +18,7 @@ form.addEventListener("submit", function (event) {
     alert("Password don't match");
     return;
   }
-  userData["password"] = password;
-  localStorage.setItem(email, userData);
+  localStorage.setItem(email, password);
 
   console.log(localStorage);
   alert("Registration Complete, redirecting to login page");

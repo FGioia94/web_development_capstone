@@ -1,42 +1,28 @@
-async function fetchPokedex() {
-  const response = await fetch("https://pokeapi.co/api/v2/pokemon?limit=10000");
+async function getSprite(pokemon) {
+  const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${pokemon}`);
   const data = await response.json();
-  return data.results;
+  return data.sprites.front_default;
 }
-async function getSprites(pokemonList) {
-  
-  const requests = pokemonList.map((pokemon) =>
-    fetch(`https://pokeapi.co/api/v2/pokemon/${pokemon.name}`).then((res) =>
-      res.json()
-    )
-  );
-  // merging all the promises to avoid exceding the api request limit (100 requests per IP)
-  try {
-    const pokemonData = await Promise.all(requests);
-    return pokemonData.map((pokemon) => pokemon.sprites.front_default);
-  } catch (error) {
-    console.error("Error fetching Pokémon sprites:", error);
-  }
-}
+async function main() {
+  let defeatedList = localStorage.getItem("defeatedList");
+  defeatedList = defeatedList ? JSON.parse(defeatedList) : []; // Convert from string to array
 
-// Example usage
-const pokemonNames = ["pikachu", "charizard", "bulbasaur"];
-getSprites(pokemonNames).then((sprites) => console.log(sprites));
-
-fetchPokedex().then((pokemonList) => {
+  console.log(defeatedList);
+  const amount = defeatedList.length;
   const pokedex = document.getElementById("pokedex");
-  const sprites = getSprites(pokemonList);
-  pokemonList.forEach((pokemon, index) => {
+  for (const pokemon of defeatedList) {
+    console.log(pokemon);
+    const sprite = await getSprite(pokemon);
+    console.log(sprite);
     const pokemonCard = document.createElement("div");
     const nameLabel = document.createElement("h3");
-    const imageLabel = document.createElement("img");
+    const image = document.createElement("img");
     pokemonCard.appendChild(nameLabel);
-    pokemonCard.appendChild(imageLabel);
+    pokemonCard.appendChild(image);
     pokedex.appendChild(pokemonCard);
-    nameLabel.innerText =
-      pokemon.name.charAt(0).toUpperCase() + pokemon.name.slice(1);
-    console.log(pokemon);
-    imageLabel.src = sprites[index].detail.sprites.front_default;
-  });
-  console.log(data);
-});
+    nameLabel.innerText = pokemon;
+    image.src = sprite;
+    console.log(localStorage);
+  }
+}
+main();
