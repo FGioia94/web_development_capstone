@@ -36,7 +36,6 @@ function setLogoutLinks() {
 function main() {
   const loggedIn = sessionStorage.getItem("isLoggedIn");
   if (loggedIn) {
-    console.log("in");
     const email = loggedIn;
     setLoginLinks(email);
   } else {

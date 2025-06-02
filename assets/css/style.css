@@ -1,0 +1,68 @@
+body {
+  font-family: "Helvetica Neue", sans-serif;
+  color: #222224;
+}
+
+#pokemon-logo {
+  max-height: 5em;
+  max-width: 5em;
+}
+#pokemon-logo:hover {
+  animation: bounce 2s ease infinite;
+}
+@keyframes bounce {
+  0% {
+    transform: translateY(0%);
+  }
+  10% {
+    transform: translateY(-15%);
+  }
+  20% {
+    transform: translateY(0%);
+  }
+  30% {
+    transform: translateY(-7%);
+  }
+  40% {
+    transform: translateY(0%);
+  }
+  50% {
+    transform: translateY(-3%);
+  }
+  100% {
+    transform: translateY(0%);
+  }
+}
+
+header {
+  background-color: #f00000;
+  padding-top: 1em;
+  padding-bottom: 0.5em;
+  display: flex;
+}
+#header-nav-ul {
+  display: flex;
+}
+
+button {
+  background-color: white;
+  border-radius: 4px;
+  border: 3px solid #222224;
+}
+button:hover {
+  color: white;
+  background-color: #222224;
+  border-radius: 4px;
+  border: 3px solid #222224;
+}
+footer {
+  background-color: #ee1515b0;
+  display: block;
+}
+#footer-columns {
+  display: flex;
+}
+#footer-contact {
+  display: flex;
+  flex-direction: column;
+}

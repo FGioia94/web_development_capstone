@@ -8,12 +8,18 @@
       name="description"
       content="Are you brave enough to be a pokemon trainer?"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+    />
     <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel="stylesheet" href="assets/css/index.css" />
   </head>
   <body>
     <header>
-      <nav>
-        <ul>
+      <img src="./assets/images/pokemon_logo.png" id="pokemon-logo" />
+      <nav id="header-nav">
+        <ul id="header-nav-ul">
           <li><a href="about.html">About</a></li>
           <li><a href="contacts.html">Contacts</a></li>
           <li><a href="register.html" id="signin">Sign in</a></li>
@@ -22,34 +28,58 @@
       </nav>
     </header>
     <main>
-      <h1>Random Pokemon Battles</h1>
-      <h2>Are you brave enough?</h2>
-      <blockquote>Take charge of your destiny.</blockquote>
-      <p>Rayquaza, <cite>Pokémon Mystery Dungeon: Rescue Team DX</cite></p>
+      <section id="intro-section">
+        <div id="intro-animated">
+          <h1>Pokémon Arena</h1>
+          <h2>Are you brave enough?</h2>
+        </div>
+      </section>
+
+      <div id="video-container">
+        <video
+          src="./assets/videos/intro.webm"
+          autoplay
+          muted
+          playsinline
+          loop
+        ></video>
+      </div>
+      <aside id="quote-div">
+        <div>
+          <blockquote>Take charge of your destiny.</blockquote>
+          <p>Rayquaza<cite>, Pokémon Mystery Dungeon: Rescue Team DX</cite></p>
+        </div>
+      </aside>
       <a href="./game.html">
-        <button>Let's Fight!</button>
+        <button id="fight-button">Let's Fight!</button>
       </a>
     </main>
     <footer>
-      <nav>
-        <ul>
-          <li><a href="about.html">About</a></li>
-          <li><a href="contacts.html">Contacts</a></li>
-          <li><a href="privacy.html">Privacy</a></li>
-        </ul>
-      </nav>
-      <section>
-        <h2>Contact Us</h2>
-        <form>
-          <label for="email">email</label>
-          <input type="email" name="email" />
-          <label for="message">Message</label>
-          <textarea name="message"></textarea>
-          <label for="tos-checkbox">I agree to the terms of service</label>
-          <input type="checkbox" name="tos-checkbox" />
-          <input type="submit" />
-        </form>
-      </section>
+      <div id="footer-columns">
+        <section id="column-left">
+          <h2>Contact Us</h2>
+          <form id="footer-contact">
+            <label for="email">email</label>
+            <input type="email" name="email" />
+            <label for="message">Message</label>
+            <textarea name="message"></textarea>
+            <label for="tos-checkbox"
+              >I agree to the <a href="tos.html">terms of service</a></label
+            >
+            <input type="checkbox" name="tos-checkbox" />
+            <input type="submit" />
+          </form>
+        </section>
+        <section id="column-right">
+          <nav>
+            <ul>
+              <li><a href="about.html">About</a></li>
+              <li><a href="contacts.html">Contacts</a></li>
+              <li><a href="privacy.html">Privacy</a></li>
+            </ul>
+          </nav>
+        </section>
+      </div>
       <span>@Francesco Gioia 2025</span>
     </footer>
     <script src="assets/js/index.js"></script>

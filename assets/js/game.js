@@ -150,13 +150,15 @@ function attack(attacker, move, target) {
         let defeatedList = localStorage.getItem("defeatedList");
         defeatedList = defeatedList ? JSON.parse(defeatedList) : []; // Convert from string to array
 
-        if (!defeatedList.includes(target.name)) {
-          console.log(defeatedList);
-          defeatedList.push(target.name);
+        if (sessionStorage.getItem("isLoggedIn")) {
+          if (!defeatedList.includes(target.name)) {
+            console.log(defeatedList);
+            defeatedList.push(target.name);
 
-          localStorage.setItem("defeatedList", JSON.stringify(defeatedList));
+            localStorage.setItem("defeatedList", JSON.stringify(defeatedList));
 
-          console.log(localStorage);
+            console.log(localStorage);
+          }
         }
       } else {
         winLoseText.textContent = "YOU LOSE";
