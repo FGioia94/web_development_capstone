@@ -13,6 +13,18 @@
   </head>
 </html>
 <body>
+  <header>
+    <img src="./assets/images/pokemon_logo.png" id="pokemon-logo" />
+    <nav id="header-nav">
+      <ul id="header-nav-ul">
+          <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contacts.html">Contacts</a></li>
+        <li><a href="register.html" id="signin">Sign in</a></li>
+        <li><a href="login.html" id="login">Login</a></li>
+      </ul>
+    </nav>
+  </header>
   <form>
     <label for="email-field">Email</label>
     <input type="email" name="email-field" />
@@ -21,5 +33,35 @@
     <input type="submit" />
     <p>Not subscribed yet?<a href="register.html">Sign In</a></p>
   </form>
+  <footer>
+    <div id="footer-columns">
+      <section id="column-left">
+        <h2>Contact Us</h2>
+        <form id="footer-contact">
+          <label for="email">Email</label>
+          <input type="email" name="email" />
+          <label for="message">Message</label>
+          <textarea name="message"></textarea>
+          <div id="tos">
+            <label for="tos-checkbox"
+              >I agree to the <a href="tos.html">terms of service</a></label
+            >
+            <input type="checkbox" name="tos-checkbox" />
+          </div>
+          <input type="submit" id="submit-button" value="Submit"/>
+        </form>
+      </section>
+      <section id="column-right">
+        <nav>
+          <ul>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contacts.html">Contacts</a></li>
+            <li><a href="privacy.html">Privacy</a></li>
+          </ul>
+        </nav>
+      </section>
+    </div>
+  </footer>
+  <script src="assets/js/scripts.js"></script>
   <script src="./assets/js/login.js"></script>
 </body>

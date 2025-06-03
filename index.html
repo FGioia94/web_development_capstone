@@ -44,30 +44,34 @@
           loop
         ></video>
       </div>
-      <aside id="quote-div">
-        <div>
-          <blockquote>Take charge of your destiny.</blockquote>
-          <p>Rayquaza<cite>, Pokémon Mystery Dungeon: Rescue Team DX</cite></p>
-        </div>
-      </aside>
-      <a href="./game.html">
-        <button id="fight-button">Let's Fight!</button>
-      </a>
+      <section id = "quote-section">
+          <div id="quote-div">
+            <blockquote>Take charge of your destiny.</blockquote>
+            <p>
+              Rayquaza<cite>, Pokémon Mystery Dungeon: Rescue Team DX</cite>
+            </p>
+          </div>
+          <a href="./game.html">
+            <button id="fight-button">Let's Fight!</button>
+          </a>
+      </section>
     </main>
     <footer>
       <div id="footer-columns">
         <section id="column-left">
           <h2>Contact Us</h2>
           <form id="footer-contact">
-            <label for="email">email</label>
+            <label for="email">Email</label>
             <input type="email" name="email" />
             <label for="message">Message</label>
             <textarea name="message"></textarea>
-            <label for="tos-checkbox"
-              >I agree to the <a href="tos.html">terms of service</a></label
-            >
-            <input type="checkbox" name="tos-checkbox" />
-            <input type="submit" />
+            <div id="tos">
+              <label for="tos-checkbox"
+                >I agree to the <a href="tos.html">terms of service</a></label
+              >
+              <input type="checkbox" name="tos-checkbox" />
+            </div>
+            <input type="submit" id="submit-button" value="Submit"/>
           </form>
         </section>
         <section id="column-right">
@@ -80,8 +84,8 @@
           </nav>
         </section>
       </div>
-      <span>@Francesco Gioia 2025</span>
     </footer>
+    <script src="assets/js/scripts.js"></script>
     <script src="assets/js/index.js"></script>
   </body>
 </html>

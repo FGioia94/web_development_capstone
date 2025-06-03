@@ -3,8 +3,8 @@
 }
 #intro-section {
   color: white;
-  padding-top: 1em;
-  padding-bottom: 3em;
+  padding-top: 10em;
+  padding-bottom: 5em;
 }
 #intro-section h1 {
   font-size: 5em;
@@ -30,9 +30,20 @@
     transform: translateY(0);
   }
 }
-
+#fight-button {
+  padding: 1vw;
+  font-weight: 900;
+  font-size: 5vw;
+  border-radius: 4em;
+  padding-left: 0.5em;
+  padding-right: 0.5em;
+  padding-top: 0.25em;
+  padding-bottom: 0.25em;
+  border:none;
+}
 #fight-button:hover {
   animation: turn-red 2s ease;
+  border:none;
 }
 @keyframes turn-red {
   0% {
@@ -40,15 +51,18 @@
   }
   100% {
     background-color: #f00000;
-    border: 3px solid #f00000;
   }
 }
 
 #quote-div {
-  display: flex;
-  justify-content: center;
+
   text-align: center;
-  margin: 2em;
+  margin: 5em;
+}
+#quote-section {
+
+  text-align: center;
+  margin: 10em;
 }
 
 blockquote {
@@ -96,4 +110,9 @@ video {
   100% {
     max-height: 0px;
   }
+}
+
+#fight-container {
+  display: flex;
+  justify-content: center;
 }
