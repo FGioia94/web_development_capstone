@@ -117,7 +117,8 @@ async function main() {
       movesContainer.appendChild(moveButton);
     });
   });
-
+  document.getElementById("loader").style.display = "none";
+  document.getElementById("game-area").style.visibility = "visible";
   processTurns();
 }
 
@@ -139,7 +140,8 @@ function attack(attacker, move, target) {
       const playAgainContainer = document.getElementById(
         "play-again-container"
       );
-      gameArea.hidden = true;
+      
+      gameArea.style.visibility = "hidden";
 
       playAgainContainer.hidden = false;
       const winLoseText = document.getElementById("win-lose-text");
@@ -188,14 +190,19 @@ function lockButtons(target) {
   });
 }
 function processTurns() {
+  const pokemonCards = document.getElementsByClassName("pokemon");
   if (counter % 2 === 0) {
     unlockButtons("player");
     lockButtons("cpu");
+    pokemonCards[0].style.backgroundColor = "lightblue";
+    pokemonCards[1].style.backgroundColor = "lightgray";
   } else {
     documentData["player"]["moveButtons"].forEach((moveButton) => {
       moveButton.disabled = true;
     });
 
+    pokemonCards[0].style.backgroundColor = "lightgray";
+    pokemonCards[1].style.backgroundColor = "lightblue";
     const randomIndex = Math.floor(Math.random() * 4);
     setTimeout(() => {
       unlockButtons("cpu");

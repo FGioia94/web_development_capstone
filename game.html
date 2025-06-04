@@ -3,16 +3,14 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Register to TuneHive</title>
-    <meta
-      name="description"
-      content="Chat with an AI assistant to discover new music"
-    />
+    <title>Pokemon Arena</title>
+    <meta name="description" content="Are you brave enough" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
     />
     <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel="stylesheet" href="assets/css/game.css" />
   </head>
 </html>
 <body>
@@ -20,7 +18,8 @@
     <img src="./assets/images/pokemon_logo.png" id="pokemon-logo" />
     <nav id="header-nav">
       <ul id="header-nav-ul">
-          <li><a href="index.html">Home</a></li>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="game.html">Play</a></li>
         <li><a href="about.html">About</a></li>
         <li><a href="contacts.html">Contacts</a></li>
         <li><a href="register.html" id="signin">Sign in</a></li>
@@ -34,12 +33,13 @@
         <h2 id="win-lose-text"></h2>
         <button id="play-again">Play Again</button>
       </div>
+      <div id="loader"></div>
       <div id="game-area">
-        <section class="loader" id="user-section">
+        <section class="pokemon" id="user-section">
           <div class="sprites-container"></div>
           <div class="moves-container"></div>
         </section>
-        <section class="loader" id="cpu-section">
+        <section class="pokemon" id="cpu-section">
           <div class="sprites-container"></div>
           <div class="moves-container"></div>
         </section>
@@ -64,7 +64,7 @@
             >
             <input type="checkbox" name="tos-checkbox" />
           </div>
-          <input type="submit" id="submit-button" value="Submit"/>
+          <input type="submit" id="submit-button" value="Submit" />
         </form>
       </section>
       <section id="column-right">

@@ -1,0 +1,53 @@
+#container {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  align-items: center;
+  animation: fade-in-down 2s ease;
+  margin-bottom:6em;
+  padding-top: 10em;
+}
+
+main {
+  width: 20%;
+  margin-right: 4em;
+}
+#contact-form {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+#tos-contact {
+  color: #222224;
+}
+#tos-contact:hover {
+  color: #f00000;
+}
+
+#contacts-submit-button {
+  background-color: white;
+  color: #222224;
+  border: 0.3em solid #222224;
+  border-radius: 2em;
+  width: 30%;
+  margin-top: 1em;
+  font-size: 1em;
+  font-weight: 700;
+  padding: 0.5em 0em 0.5em 0em;
+}
+#contacts-submit-button:hover {
+  background-color: #222224;
+  color: white;
+}
+
+@keyframes fade-in-down {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

@@ -27,15 +27,61 @@ form.addEventListener("submit", function (event) {
   const messageBox = document.getElementsByName("message")[0];
   const checkbox = document.getElementsByName("tos-checkbox")[0];
 
-  if (emailField.value === "" || messageBox.value === ""){
+  if (emailField.value === "" || messageBox.value === "") {
     alert("You should fill all the form first");
-  }
-  else if (checkbox.checked === false) {
+  } else if (checkbox.checked === false) {
     alert("You should agree with our Terms of Service first");
-  }
-  else {
-    alert("Thanks, we have received your message and will answer your question as soon as possible");
+  } else {
+    alert(
+      "Thanks, we have received your message and will answer your question as soon as possible"
+    );
   }
 });
-logo.click();
 
+function setLoginLinks(email) {
+  const login = document.getElementById("login");
+  const signin = document.getElementById("signin");
+
+  login.textContent = "Logout";
+  login.href = "#";
+  login.onclick = function () {
+    logout(email);
+  };
+  signin.textContent = email;
+  signin.href = `/dashboard.html?user=${email}`;
+}
+
+function logout() {
+  login.onclick = null;
+  console.log("loggedout");
+  sessionStorage.removeItem("isLoggedIn");
+  console.log(sessionStorage.getItem("isLoggedIn"));
+
+  window.location.href = `././index.html`;
+}
+
+function setLogoutLinks() {
+  console.log("out");
+  const login = document.getElementById("login");
+  const signin = document.getElementById("signin");
+
+  signin.textContent = "Sign In";
+  signin.href = "././register.html";
+
+  login.textContent = "Login";
+
+  login.href = "././login.html";
+}
+
+function main() {
+  logo.click();
+  const loggedIn = sessionStorage.getItem("isLoggedIn");
+  console.log("AAA", loggedIn)
+  if (loggedIn) {
+    const email = loggedIn;
+    setLoginLinks(email);
+  } else {
+    setLogoutLinks();
+  }
+}
+main();

@@ -3,16 +3,17 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Register to TuneHive</title>
+    <title>Register to Pokemon Arena</title>
     <meta
       name="description"
-      content="Ready to become a TuneHive member? Register here!"
+      content="Ready to become a Pokemon Arena member? Register here!"
     />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
     />
     <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel="stylesheet" href="assets/css/register.css" />
   </head>
 
   <body>
@@ -21,6 +22,7 @@
       <nav id="header-nav">
         <ul id="header-nav-ul">
           <li><a href="index.html">Home</a></li>
+          <li><a href="game.html">Play</a></li>
           <li><a href="about.html">About</a></li>
           <li><a href="contacts.html">Contacts</a></li>
           <li><a href="register.html" id="signin">Sign in</a></li>
@@ -28,15 +30,18 @@
         </ul>
       </nav>
     </header>
-    <form>
-      <label for="email-field">Email</label>
-      <input type="email" name="email-field" />
-      <label for="password-field">Password</label>
-      <input type="password" name="password-field" />
-      <label for="confirm-pw-field">Confirm Password</label>
-      <input type="password" name="confirm-pw-field" />
-      <input type="submit" id="submit-button" />
-    </form>
+    <main>
+      <h1>Sign In</h1>
+      <form id="sign-in-form">
+        <label for="email-field">Email</label>
+        <input type="email" name="email-field" />
+        <label for="password-field">Password</label>
+        <input type="password" name="password-field" />
+        <label for="confirm-pw-field">Confirm Password</label>
+        <input type="password" name="confirm-pw-field" />
+        <input type="submit" value="Submit" id="register-submit-button" />
+      </form>
+    </main>
     <footer>
       <div id="footer-columns">
         <section id="column-left">
@@ -52,7 +57,7 @@
               >
               <input type="checkbox" name="tos-checkbox" />
             </div>
-            <input type="submit" id="submit-button" value="Submit"/>
+            <input type="submit" id="submit-button" value="Submit" />
           </form>
         </section>
         <section id="column-right">

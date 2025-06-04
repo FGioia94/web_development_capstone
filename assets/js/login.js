@@ -1,9 +1,13 @@
-const form = document.querySelector("form");
+const loginForm = document.getElementById("login-form");
 
-form.addEventListener("submit", function (event) {
+loginForm.addEventListener("submit", function (event) {
   event.preventDefault();
   const email = document.getElementsByName("email-field")[0].value;
   const password = document.getElementsByName("password-field")[0].value;
+  if (!email || !password) {
+    alert("Please fill all the fields");
+    return;
+  }
   if (localStorage.getItem(email) === null) {
     alert("User doesn't exist, please register first");
     return;
@@ -13,7 +17,7 @@ form.addEventListener("submit", function (event) {
   } else {
     console.log(email);
     sessionStorage.setItem("isLoggedIn", email);
-    
+
     alert("Logged in, redirecting to your dashboard");
 
     window.location.href = `/dashboard.html?user=${email}`;

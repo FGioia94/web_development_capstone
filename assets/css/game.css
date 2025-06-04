@@ -1,0 +1,50 @@
+#game-area {
+  display: flex;
+  justify-content: center;
+  align-self: center;
+  gap: 2em;
+  visibility: hidden;
+}
+.pokemon {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  padding: 2em;
+  background-color: lightgray;
+  border-radius: 2em;
+}
+
+img {
+  width: 15em;
+}
+
+.moves-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Two equal columns */
+  grid-template-rows: 1fr 1fr; /* Two equal rows */
+  gap: 10px; /* Adds space between grid items */
+}
+
+#loader {
+  width: 70px;
+  height: 70px;
+  border: 5px solid #f3f3f3; /* Light grey */
+  border-top: 5px solid red; /* Blue */
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+main {
+  display: flex;
+  justify-content: center;
+}
