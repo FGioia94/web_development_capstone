@@ -122,3 +122,27 @@ footer {
   display: flex;
   gap: 0.5rem;
 }
+.current-selected {
+  color: #222224;
+}
+
+@media screen and (max-width: 768px) {
+  header {
+    height: 100vh;
+  }
+  #header-nav {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  #header-nav-ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  #submit-button {
+    width: 80%;
+    border-radius: 1em;
+  }
+}

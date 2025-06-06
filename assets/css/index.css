@@ -1,3 +1,14 @@
+#video-container {
+  -webkit-animation-name: fadeOutRight;
+  animation-name: fadeOutRight;
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  max-height: 600px;
+  overflow: hidden;
+  animation-delay: 11.2s;
+}
 #intro-section {
   background-color: #222224;
 }
@@ -39,11 +50,11 @@
   padding-right: 0.5em;
   padding-top: 0.25em;
   padding-bottom: 0.25em;
-  border:none;
+  border: none;
 }
 #fight-button:hover {
   animation: turn-red 2s ease;
-  border:none;
+  border: none;
 }
 @keyframes turn-red {
   0% {
@@ -55,12 +66,10 @@
 }
 
 #quote-div {
-
   text-align: center;
   margin: 5em;
 }
 #quote-section {
-
   text-align: center;
   margin: 10em;
 }
@@ -80,8 +89,7 @@ blockquote {
   color: #222224;
   font-weight: 500;
 }
-#video-container {
-}
+
 video {
   position: relative;
   bottom: 250px;
@@ -115,4 +123,26 @@ video {
 #fight-container {
   display: flex;
   justify-content: center;
+}
+
+@media screen and (max-width: 768px) {
+  #video-container {
+    max-height: 200px;
+    width: 100%;
+  }
+  video {
+    padding-top: 29vh;
+    width: 100%;
+  }
+
+  #quote-section {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 0px;
+  }
+
+
+  #fight-button{width: 10em;}
 }

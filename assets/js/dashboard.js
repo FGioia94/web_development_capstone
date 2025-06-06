@@ -5,16 +5,16 @@ async function getSprite(pokemon) {
 }
 async function main() {
   let defeatedList = localStorage.getItem("defeatedList");
-  defeatedList = defeatedList ? JSON.parse(defeatedList) : []; // Convert from string to array
+  defeatedList = defeatedList ? JSON.parse(defeatedList) : []; 
 
   console.log(defeatedList);
-  const amount = defeatedList.length;
   const pokedex = document.getElementById("pokedex");
   for (const pokemon of defeatedList) {
     console.log(pokemon);
     const sprite = await getSprite(pokemon);
     console.log(sprite);
     const pokemonCard = document.createElement("div");
+    pokemonCard.classList.add("pokemon-card")
     const nameLabel = document.createElement("h3");
     const image = document.createElement("img");
     pokemonCard.appendChild(nameLabel);

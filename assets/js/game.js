@@ -60,10 +60,19 @@ async function main() {
   [spriteContainers[0], spriteContainers[1]].forEach((container) => {
     container.innerHTML = "";
   });
+  document.getElementById("loader").style.display = "inline";
+  document.getElementById("game-area").style.visibility = "hidden";
   const gameArea = document.getElementById("game-area");
   const playAgainContainer = document.getElementById("play-again-container");
   gameArea.hidden = false;
   playAgainContainer.hidden = true;
+  
+  const healthBarUser = document.getElementById("user-hp");
+  const healthBarCpu = document.getElementById("cpu-hp");
+
+  healthBarUser.style.width = `100%`;
+  healthBarCpu.style.width = `100%`;
+
   let data = await getRandomPokemon();
   let moves = await getMoves(data);
   const player = new Pokémon(data, moves, (isCpu = false));
@@ -90,10 +99,12 @@ async function main() {
 
     const pokemonName = document.createElement("h2");
     pokemonName.textContent = element.name;
+
     spritesContainer.appendChild(pokemonName);
 
     const health = document.createElement("p");
     element.healthText = health;
+
     documentData[elementLabel]["healthText"] = health;
     health.textContent = `HP ${element.hp}/${element.maxHp}`;
     spritesContainer.appendChild(health);
@@ -108,6 +119,7 @@ async function main() {
     movesContainer.innerHTML = "";
     Object.keys(element.moves).forEach((move) => {
       const moveButton = document.createElement("button");
+      moveButton.classList.add("move-button");
       documentData[elementLabel]["moveButtons"].push(moveButton);
 
       moveButton.textContent = move;
@@ -129,6 +141,7 @@ function attack(attacker, move, target) {
   message.textContent = `${attacker.name} uses ${move}`;
 
   attacker.attack_enemy(move, target);
+
   if (!target.isDead) {
     target.healthText.textContent = `HP ${target.hp}/${target.maxHp}`;
   } else {
@@ -140,8 +153,8 @@ function attack(attacker, move, target) {
       const playAgainContainer = document.getElementById(
         "play-again-container"
       );
-      
-      gameArea.style.visibility = "hidden";
+
+      gameArea.hidden = true;
 
       playAgainContainer.hidden = false;
       const winLoseText = document.getElementById("win-lose-text");
@@ -158,8 +171,6 @@ function attack(attacker, move, target) {
             defeatedList.push(target.name);
 
             localStorage.setItem("defeatedList", JSON.stringify(defeatedList));
-
-            console.log(localStorage);
           }
         }
       } else {
@@ -169,10 +180,19 @@ function attack(attacker, move, target) {
       playAgainButton.onclick = () => {
         main();
       };
-      message.textContent = "";
+      message.textContent = "Ready to Fight!";
       counter = 0;
     }, 3000);
   }
+  let healthBar;
+  if (target.isCpu) {
+    healthBar = document.getElementById("cpu-hp");
+  } else {
+    healthBar = document.getElementById("user-hp");
+  }
+  let healthPercentage = Math.floor((target.hp / target.maxHp) * 100);
+  healthPercentage = Math.max(0, Math.min(healthPercentage, 100));
+  healthBar.style.width = `${healthPercentage}%`;
   counter++;
   if (!attacker.isDead && !target.isDead) {
     processTurns();

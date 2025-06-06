@@ -19,7 +19,7 @@
     <nav id="header-nav">
       <ul id="header-nav-ul">
         <li><a href="index.html">Home</a></li>
-        <li><a href="game.html">Play</a></li>
+        <li><a href="game.html" class="current-selected">Play</a></li>
         <li><a href="about.html">About</a></li>
         <li><a href="contacts.html">Contacts</a></li>
         <li><a href="register.html" id="signin">Sign in</a></li>
@@ -36,17 +36,23 @@
       <div id="loader"></div>
       <div id="game-area">
         <section class="pokemon" id="user-section">
+          <div class="hp-bar-container">
+            <div class="hp-bar" id="user-hp"></div>
+          </div>
           <div class="sprites-container"></div>
           <div class="moves-container"></div>
         </section>
         <section class="pokemon" id="cpu-section">
+          <div class="hp-bar-container">
+            <div class="hp-bar" id="cpu-hp"></div>
+          </div>
           <div class="sprites-container"></div>
           <div class="moves-container"></div>
         </section>
-        <section id="message-container">
-          <p id="message"></p>
-        </section>
       </div>
+      <section id="message-container">
+        <p id="message">Ready to Fight!</p>
+      </section>
     </div>
   </main>
   <footer>

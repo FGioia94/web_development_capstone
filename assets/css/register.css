@@ -1,6 +1,6 @@
 main {
   padding-top: 7.75em;
-  padding-bottom: 7.75em;
+  padding-bottom: 10.75em;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -14,20 +14,20 @@ main {
   width: 20%;
 }
 
-#register-submit-button{
-    background-color: white;
-    color: #222224;
-    border: 0.3em solid #222224;
-    border-radius: 2em;
-    width:30%;
-    margin-top: 1em;
-    font-size: 1em;
-    font-weight: 700;
-    padding: 0.5em 0em 0.5em 0em ;
+#register-submit-button {
+  background-color: white;
+  color: #222224;
+  border: 0.3em solid #222224;
+  border-radius: 2em;
+  width: 30%;
+  margin-top: 1em;
+  font-size: 1em;
+  font-weight: 700;
+  padding: 0.5em 0em 0.5em 0em;
 }
-#register-submit-button:hover{
-    background-color: #222224;
-    color: white;
+#register-submit-button:hover {
+  background-color: #222224;
+  color: white;
 }
 @keyframes fade-in-down {
   0% {
@@ -37,5 +37,17 @@ main {
   100% {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  #sign-in-form,#register-submit-button{
+    width: 70%;
   }
 }

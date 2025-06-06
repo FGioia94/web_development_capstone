@@ -1,3 +1,14 @@
+@media screen and (max-width: 768px) {
+  #game-area {
+    flex-direction: column;
+  }
+  #message-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+}
+
 #game-area {
   display: flex;
   justify-content: center;
@@ -47,4 +58,66 @@ img {
 main {
   display: flex;
   justify-content: center;
+}
+
+.move-button {
+  background-color: white;
+  border: none;
+  border-radius: 0.2em;
+  font-weight: 700;
+  padding: 1.5em;
+}
+
+.move-button:hover {
+  border: none;
+  border-radius: 0.2em;
+}
+
+#cpu-section .move-button:hover {
+  background-color: white;
+  color: lightgrey;
+}
+
+#message {
+  font-weight: 700;
+  font-size: 2em;
+}
+
+#game-container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  gap: 3em;
+}
+
+main {
+  padding-top: 7.5em;
+  padding-bottom: 3em;
+}
+
+#cpu-section,
+#user-section {
+  width: 25em;
+}
+
+#play-again {
+  border-radius: 0.5em;
+  font-weight: 700;
+  padding: 1em 3em 1em 3em;
+}
+
+.hp-bar-container {
+  width: 15rem;
+  height: 0.5rem;
+  background-color: #333;
+  border-radius: 1rem;
+  overflow: hidden;
+  border: 0.1rem solid #000;
+}
+
+.hp-bar {
+  height: 100%;
+  background-color: #e60000;
+  transition: width 0.5s ease-in-out;
 }

@@ -1,0 +1,32 @@
+main {
+  padding-left: 5em;
+  padding-bottom: 5em;
+  padding-top: 7.5em;
+  animation: fade-in-down 2s ease;
+}
+
+@keyframes fade-in-down {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+#privacy {
+  color: #222224;
+}
+
+#privacy:hover {
+  color: #f00000;
+}
+
+@media screen and (max-width: 768px) {
+  main{
+    padding-left:1em;
+    padding-right:1em;
+  }
+}
