@@ -1,8 +1,39 @@
+/* A General Stylesheet that contains the rules for all the pages
+Author: Francesco Gioia
+Last Modified: 06/06/2025*/
+
 body {
   font-family: "Helvetica Neue", sans-serif;
   color: #222224;
 }
-
+header {
+  background-color: #f00000;
+  padding-top: 1em;
+  padding-left: 1.5em;
+  padding-bottom: 1em;
+  display: flex;
+  position: fixed;
+  z-index: 999;
+  width: 100%;
+}
+#header-nav-ul {
+  display: flex;
+}
+header li {
+  font-size: 2em;
+  padding-left: 0.5em;
+}
+ul {
+  list-style: none;
+}
+a {
+  font-weight: 700;
+  text-decoration: none;
+  color: white;
+}
+a:hover {
+  color: black;
+}
 #pokemon-logo {
   max-height: 4em;
   max-width: 4em;
@@ -10,7 +41,8 @@ body {
 #pokemon-logo:hover {
   animation: bounce 2s ease infinite;
 }
-@keyframes bounce {
+@keyframes bounce { 
+  /* This is the animation used to make the pokemon logo bounce at hover */
   0% {
     transform: translateY(0%);
   }
@@ -33,19 +65,15 @@ body {
     transform: translateY(0%);
   }
 }
-
-header {
-  background-color: #f00000;
-  padding-top: 1em;
-  padding-left: 1.5em;
-  padding-bottom: 1em;
-  display: flex;
-  position: fixed;
-  z-index: 999;
-  width: 100%;
+button {
+  background-color: white;
+  border-radius: 2em;
 }
-#header-nav-ul {
-  display: flex;
+button:hover {
+  color: white;
+  background-color: #222224;
+  border-radius: 4px;
+  border: 3px solid #222224;
 }
 #submit-button {
   border: none;
@@ -58,28 +86,16 @@ header {
   color: white;
   font-weight: 700;
 }
-
 #submit-button:hover {
   background-color: white;
   color: rgba(240, 0, 0, 1);
-}
-button {
-  background-color: white;
-
-  border-radius: 2em;
-  /* border: 3px solid #222224; */
-}
-button:hover {
-  color: white;
-  background-color: #222224;
-  border-radius: 4px;
-  border: 3px solid #222224;
 }
 footer {
   background-color: rgba(240, 0, 0, 1);
   padding-top: 2em;
   padding-bottom: 5em;
   display: block;
+  color: white;
 }
 #footer-columns {
   display: flex;
@@ -91,33 +107,9 @@ footer {
   gap: 0.5rem;
   flex-direction: column;
 }
-
-a {
-  font-weight: 700;
-  text-decoration: none;
-  color: white;
-}
-
-a:hover {
-  color: black;
-}
-ul {
-  list-style: none;
-}
-
-header li {
-  font-size: 2em;
-  padding-left: 0.5em;
-}
-
-footer {
-  color: white;
-}
-
 #column-left {
   width: 30%;
 }
-
 .tos {
   display: flex;
   gap: 0.5rem;
@@ -126,6 +118,7 @@ footer {
   color: #222224;
 }
 
+/* RULES FOR SMALL SCREENS */
 @media screen and (max-width: 768px) {
   header {
     height: 100vh;

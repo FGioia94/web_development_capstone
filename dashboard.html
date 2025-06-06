@@ -1,3 +1,10 @@
+<!-- 
+Dashboard Page
+This page contains the Pokemon that the user has already beaten
+Author: Francesco Gioia
+Last Modified: 06/06/2025
+-->
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -12,41 +19,60 @@
     <link rel="stylesheet" href="assets/css/style.css" />
     <link rel="stylesheet" href="assets/css/dashboard.css" />
   </head>
+
   <body>
     <header>
-      <img src="./assets/images/pokemon_logo.png" id="pokemon-logo" />
-      <nav id="header-nav">
+      <img
+        src="./assets/images/pokemon_logo.png"
+        id="pokemon-logo"
+        alt="Pokemon Logo"
+      />
+      <nav id="header-nav" aria-label="Main navigation">
         <ul id="header-nav-ul">
           <li><a href="index.html">Home</a></li>
           <li><a href="game.html">Play</a></li>
           <li><a href="about.html">About</a></li>
           <li><a href="contacts.html">Contacts</a></li>
-          <li><a href="register.html" id="signin">Sign in</a></li>
+          <li>
+            <a href="register.html" id="signin" class="current-selected"
+              >Sign in</a
+            >
+          </li>
           <li><a href="login.html" id="login">Login</a></li>
         </ul>
       </nav>
     </header>
+
     <main>
       <h1>Dashboard</h1>
       <h2>Pokedex</h2>
       <section id="pokedex"></section>
     </main>
+
     <footer>
       <div id="footer-columns">
         <section id="column-left">
           <h2>Contact Us</h2>
           <form id="footer-contact">
             <label for="email">Email</label>
-            <input type="email" name="email" />
+            <input type="email" name="email" aria-label="Enter your email" />
             <label for="message">Message</label>
-            <textarea name="message"></textarea>
+            <textarea name="message" aria-label="Enter your message"></textarea>
             <div id="tos">
               <label for="tos-checkbox"
-                >I agree to the <a href="tos.html">terms of service</a></label
+                >I agree to the
+                <a href="tos.html" aria-label="Agree to our Terms of Service"
+                  >terms of service</a
+                ></label
               >
               <input type="checkbox" name="tos-checkbox" />
             </div>
-            <input type="submit" id="submit-button" value="Submit" />
+            <input
+              type="submit"
+              id="submit-button"
+              value="Submit"
+              aria-label="submit the form"
+            />
           </form>
         </section>
         <section id="column-right">

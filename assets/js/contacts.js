@@ -1,6 +1,12 @@
 const contactUsForm = document.getElementById("contact-form");
 
 contactUsForm.addEventListener("submit", function (event) {
+  /*
+  Handles the submission of the "Contact Us" form.
+  Prevents the default form submission behavior, validates inputs,
+  and displays appropriate alerts based on user input.
+  */
+ 
   event.preventDefault();
   const email = document.getElementsByName("email-field")[0].value;
   console.log(email);

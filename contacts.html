@@ -1,3 +1,9 @@
+<!-- 
+Contacts Page
+This page contains a contact form and company information
+Author: Francesco Gioia
+Last Modified: 06/06/2025
+-->
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -15,8 +21,12 @@
 
   <body>
     <header>
-      <img src="./assets/images/pokemon_logo.png" id="pokemon-logo" />
-      <nav id="header-nav">
+      <img
+        src="./assets/images/pokemon_logo.png"
+        id="pokemon-logo"
+        alt="Pokemon Logo"
+      />
+      <nav id="header-nav" aria-label="Main navigation">
         <ul id="header-nav-ul">
           <li><a href="index.html">Home</a></li>
           <li><a href="game.html">Play</a></li>
@@ -27,17 +37,29 @@
         </ul>
       </nav>
     </header>
+
     <div id="container">
       <main>
         <h1>Contact Us</h1>
 
         <form id="contact-form">
           <label for="email-field">Email</label>
-          <input type="email" name="email-field"/>
+          <input
+            type="email"
+            name="email-field"
+            aria-label="Enter your email"
+          />
           <label for="subject-field">Subject</label>
-          <input type="text" name="subject-field" />
+          <input
+            type="text"
+            name="subject-field"
+            aria-label="Enter your subject"
+          />
           <label for="message-field">Message</label>
-          <textarea name="message-field"></textarea>
+          <textarea
+            name="message-field"
+            aria-label="Enter your message"
+          ></textarea>
           <div class="tos">
             <label for="tos-checkbox"
               >I agree to the
@@ -56,12 +78,15 @@
         <p>info@pokemonarena.com</p>
       </aside>
     </div>
+
     <footer>
       <div id="footer-columns">
-        <section id="column-left">
+        <!-- We don't need the footer contact form here, the form is already in the page -->
+
+        <!-- <section id="column-left">
           <h2>Contact Us</h2>
           <form id="footer-contact">
-            <label for="email">Email</label>
+            <label for="email" aria-label="Enter your email" >Email</label>
             <input type="email" name="email" />
             <label for="message">Message</label>
             <textarea name="message"></textarea>
@@ -73,7 +98,7 @@
             </div>
             <input type="submit" id="submit-button" value="Submit" />
           </form>
-        </section>
+        </section> -->
         <section id="column-right">
           <nav>
             <ul>
@@ -85,6 +110,7 @@
         </section>
       </div>
     </footer>
+    
     <script src="assets/js/scripts.js"></script>
     <script src="assets/js/contacts.js"></script>
   </body>

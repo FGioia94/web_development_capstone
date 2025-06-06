@@ -1,14 +1,13 @@
-@media screen and (max-width: 768px) {
-  #game-area {
-    flex-direction: column;
-  }
-  #message-container {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-  }
-}
+/* Stylesheet for the game page
+Author: Francesco Gioia
+Last Modified: 06/06/2025*/
 
+main {
+  display: flex;
+  justify-content: center;
+  padding-top: 7.5em;
+  padding-bottom: 3em;
+}
 #game-area {
   display: flex;
   justify-content: center;
@@ -25,28 +24,27 @@
   background-color: lightgray;
   border-radius: 2em;
 }
-
 img {
   width: 15em;
 }
-
 .moves-container {
   display: grid;
-  grid-template-columns: 1fr 1fr; /* Two equal columns */
-  grid-template-rows: 1fr 1fr; /* Two equal rows */
-  gap: 10px; /* Adds space between grid items */
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 10px;
 }
 
 #loader {
   width: 70px;
   height: 70px;
-  border: 5px solid #f3f3f3; /* Light grey */
-  border-top: 5px solid red; /* Blue */
+  border: 5px solid #f3f3f3;
+  border-top: 5px solid red;
   border-radius: 50%;
   animation: spin 1s linear infinite;
 }
 
 @keyframes spin {
+  /* This is the loader spin animation */
   0% {
     transform: rotate(0deg);
   }
@@ -54,12 +52,6 @@ img {
     transform: rotate(360deg);
   }
 }
-
-main {
-  display: flex;
-  justify-content: center;
-}
-
 .move-button {
   background-color: white;
   border: none;
@@ -67,22 +59,18 @@ main {
   font-weight: 700;
   padding: 1.5em;
 }
-
 .move-button:hover {
   border: none;
   border-radius: 0.2em;
 }
-
 #cpu-section .move-button:hover {
   background-color: white;
   color: lightgrey;
 }
-
 #message {
   font-weight: 700;
   font-size: 2em;
 }
-
 #game-container {
   display: flex;
   justify-content: center;
@@ -90,23 +78,20 @@ main {
   align-items: center;
   gap: 3em;
 }
-
-main {
-  padding-top: 7.5em;
-  padding-bottom: 3em;
-}
-
 #cpu-section,
 #user-section {
   width: 25em;
 }
-
 #play-again {
   border-radius: 0.5em;
   font-weight: 700;
   padding: 1em 3em 1em 3em;
 }
-
+.hp-bar {
+  height: 100%;
+  background-color: #e60000;
+  transition: width 0.5s ease-in-out;
+}
 .hp-bar-container {
   width: 15rem;
   height: 0.5rem;
@@ -116,8 +101,14 @@ main {
   border: 0.1rem solid #000;
 }
 
-.hp-bar {
-  height: 100%;
-  background-color: #e60000;
-  transition: width 0.5s ease-in-out;
+/* RULES FOR SMALL SCREENS */
+@media screen and (max-width: 768px) {
+  #game-area {
+    flex-direction: column;
+  }
+  #message-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
 }

@@ -1,3 +1,7 @@
+/* Stylesheet for the register page
+Author: Francesco Gioia
+Last Modified: 06/06/2025*/
+
 main {
   padding-top: 7.75em;
   padding-bottom: 10.75em;
@@ -6,6 +10,17 @@ main {
   align-items: center;
   animation: fade-in-down 2s ease;
 }
+@keyframes fade-in-down {
+  /* Animation to make the main area fade in*/
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 
 #sign-in-form {
   display: flex;
@@ -13,7 +28,6 @@ main {
   flex-direction: column;
   width: 20%;
 }
-
 #register-submit-button {
   background-color: white;
   color: #222224;
@@ -29,17 +43,8 @@ main {
   background-color: #222224;
   color: white;
 }
-@keyframes fade-in-down {
-  0% {
-    opacity: 0;
-    transform: translateY(-20px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
 
+/* RULES FOR SMALL SCREENS */
 @media screen and (max-width: 768px) {
   main {
     display: flex;
@@ -47,7 +52,8 @@ main {
     align-items: center;
     flex-direction: column;
   }
-  #sign-in-form,#register-submit-button{
+  #sign-in-form,
+  #register-submit-button {
     width: 70%;
   }
 }

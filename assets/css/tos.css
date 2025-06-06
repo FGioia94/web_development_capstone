@@ -1,11 +1,15 @@
+/* Stylesheet for the tos page
+Author: Francesco Gioia
+Last Modified: 06/06/2025*/
+
 main {
   padding-left: 5em;
   padding-bottom: 5em;
   padding-top: 7.5em;
   animation: fade-in-down 2s ease;
 }
-
 @keyframes fade-in-down {
+  /* Animation to make the main area fade in*/
   0% {
     opacity: 0;
     transform: translateY(-20px);
@@ -15,18 +19,17 @@ main {
     transform: translateY(0);
   }
 }
-
 #privacy {
   color: #222224;
 }
-
 #privacy:hover {
   color: #f00000;
 }
 
+/* RULES FOR SMALL SCREENS */
 @media screen and (max-width: 768px) {
-  main{
-    padding-left:1em;
-    padding-right:1em;
+  main {
+    padding-left: 1em;
+    padding-right: 1em;
   }
 }

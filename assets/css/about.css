@@ -1,3 +1,7 @@
+/* Stylesheet for the about page
+Author: Francesco Gioia
+Last Modified: 06/06/2025*/
+
 #main-div {
   padding-top: 6em;
   display: flex;
@@ -5,7 +9,6 @@
   padding-bottom: 2em;
   animation: fade-in-down 2s ease;
 }
-
 main {
   max-width: 65%;
   padding-right: 2em;
@@ -13,8 +16,8 @@ main {
 aside {
   max-width: 20%;
 }
-
 @keyframes fade-in-down {
+  /* Animation to make the main area fade in*/
   0% {
     opacity: 0;
     transform: translateY(-20px);
@@ -25,6 +28,7 @@ aside {
   }
 }
 
+/* RULES FOR SMALL SCREENS */
 @media screen and (max-width: 768px) {
   #main-div {
     display: flex;
@@ -32,7 +36,8 @@ aside {
     justify-content: center;
     align-items: center;
   }
-  aside, main {
+  aside,
+  main {
     padding: 0px;
     text-align: center;
     display: flex;

@@ -1,13 +1,18 @@
+/* A script that handles the dynamic functionalities of the register page
+Author: Francesco Gioia
+Last Modified: 06/06/2025*/
+
 const signInForm = document.getElementById("sign-in-form");
 
 signInForm.addEventListener("submit", function (event) {
+  // Adds form control and raises an alert if the form is correctly submitted
   event.preventDefault();
   const email = document.getElementsByName("email-field")[0].value;
   const password = document.getElementsByName("password-field")[0].value;
   const confirmPassword =
     document.getElementsByName("confirm-pw-field")[0].value;
 
-  if (!email || !password || !confirmPassword){
+  if (!email || !password || !confirmPassword) {
     alert("Please fill all the fields");
     return;
   }
@@ -17,8 +22,6 @@ signInForm.addEventListener("submit", function (event) {
     return;
   }
 
-  
-  
   if (password !== confirmPassword) {
     alert("Password don't match");
     return;

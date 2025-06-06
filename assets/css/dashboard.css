@@ -1,3 +1,7 @@
+/* Stylesheet for the dashboard page
+Author: Francesco Gioia
+Last Modified: 06/06/2025*/
+
 main {
   display: flex;
   justify-content: center;
@@ -7,7 +11,6 @@ main {
   margin-bottom: 10em;
   animation: fade-in-down 2s ease;
 }
-
 .pokemon-card {
   background-color: lightgray;
   display: flex;
@@ -15,22 +18,21 @@ main {
   flex-direction: column;
   align-items: center;
   padding: 2em;
-
   height: 15em;
-
   width: 15em;
   border-radius: 1em;
 }
-
 .pokemon-card img {
   width: 10em;
 }
-
 #pokedex {
   display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
   gap: 2em;
 }
 
+/* RULES FOR SMALL SCREENS */
 @keyframes fade-in-down {
   0% {
     opacity: 0;

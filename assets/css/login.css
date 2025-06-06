@@ -1,3 +1,7 @@
+/* Stylesheet for the login page
+Author: Francesco Gioia
+Last Modified: 06/06/2025*/
+
 main {
   padding-top: 7.75em;
   padding-bottom: 10.2em;
@@ -8,21 +12,6 @@ main {
   align-items: center;
   animation: fade-in-down 2s ease;
 }
-
-#login-form {
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  width: 20%;
-}
-
-#sign-in {
-  color: #222224;
-}
-#sign-in:hover {
-  color: red;
-}
-
 @keyframes fade-in-down {
   0% {
     opacity: 0;
@@ -33,35 +22,48 @@ main {
     transform: translateY(0);
   }
 }
-
-#login-submit-button{
-    background-color: white;
-    color: #222224;
-    border: 0.3em solid #222224;
-    border-radius: 2em;
-    width:30%;
-    margin-top: 1em;
-    font-size: 1em;
-    font-weight: 700;
-    padding: 0.5em 0em 0.5em 0em ;
+#login-form {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  width: 20%;
 }
-#login-submit-button:hover{
-    background-color: #222224;
-    color: white;
+#sign-in {
+  color: #222224;
+}
+#sign-in:hover {
+  color: red;
+}
+#login-submit-button {
+  background-color: white;
+  color: #222224;
+  border: 0.3em solid #222224;
+  border-radius: 2em;
+  width: 30%;
+  margin-top: 1em;
+  font-size: 1em;
+  font-weight: 700;
+  padding: 0.5em 0em 0.5em 0em;
+}
+#login-submit-button:hover {
+  background-color: #222224;
+  color: white;
 }
 
+/* RULES FOR SMALL SCREENS */
 @media screen and (max-width: 768px) {
-  #login-form{
+  #login-form {
     display: flex;
     justify-content: center;
     flex-direction: column;
     align-items: center;
     text-align: center;
   }
-  #login-form, #contacts-submit-button{
+  #login-form,
+  #contacts-submit-button {
     width: 70%;
   }
-  main p{
+  main p {
     width: 100%;
   }
 }

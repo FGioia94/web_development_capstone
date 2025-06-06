@@ -1,11 +1,18 @@
+/* A General script that contains the scripts used for all the pages
+Author: Francesco Gioia
+Last Modified: 06/06/2025*/
+
 const logo = document.getElementById("pokemon-logo");
 const header = document.getElementsByTagName("header")[0];
 const body = document.getElementsByTagName("body")[0];
-let logoState = 0;
+let logoState = 0; // Initial visibility state of the header
+
 logo.onclick = () => {
+  /*
+  This makes the header bar disappear and appear when the logo is clicked
+  */
   if (logoState === 0) {
     logoState = 1;
-    console.log(header);
     header.style.visibility = "hidden";
     logo.style.padding = "1.5em";
     logo.style.position = "fixed";
@@ -21,27 +28,40 @@ logo.onclick = () => {
 };
 
 const form = document.getElementById("footer-contact");
-form.addEventListener("submit", function (event) {
-  event.preventDefault();
-  const emailField = document.getElementsByName("email")[0];
-  const messageBox = document.getElementsByName("message")[0];
-  const checkbox = document.getElementsByName("tos-checkbox")[0];
+if (form) {
+  /*
+  If there is a footer contact form, 
+  add form validations and raise an alert when the form is submitted
+  */
+  form.addEventListener("submit", function (event) {
+    event.preventDefault();
+    const emailField = document.getElementsByName("email")[0];
+    const messageBox = document.getElementsByName("message")[0];
+    const checkbox = document.getElementsByName("tos-checkbox")[0];
 
-  if (emailField.value === "" || messageBox.value === "") {
-    alert("You should fill all the form first");
-  } else if (checkbox.checked === false) {
-    alert("You should agree with our Terms of Service first");
-  } else {
-    alert(
-      "Thanks, we have received your message and will answer your question as soon as possible"
-    );
-  }
-});
+    if (emailField.value === "" || messageBox.value === "") {
+      alert("You should fill all the form first");
+    } else if (checkbox.checked === false) {
+      alert("You should agree with our Terms of Service first");
+    } else {
+      alert(
+        "Thanks, we have received your message and will answer your question as soon as possible"
+      );
+    }
+  });
+}
 
 function setLoginLinks(email) {
+  /*
+  Function to update the navbar links based on the user's login state.
+  It changes the "Login" button to a "Logout" button and updates the "Sign in" button 
+  to display the user's email and link to their dashboard.
+
+  @param email: A string representing the user's email.
+  */
+
   const login = document.getElementById("login");
   const signin = document.getElementById("signin");
-
   login.textContent = "Logout";
   login.href = "#";
   login.onclick = function () {
@@ -53,30 +73,28 @@ function setLoginLinks(email) {
 
 function logout() {
   login.onclick = null;
-  console.log("loggedout");
   sessionStorage.removeItem("isLoggedIn");
-  console.log(sessionStorage.getItem("isLoggedIn"));
-
   window.location.href = `././index.html`;
 }
 
 function setLogoutLinks() {
-  console.log("out");
+  /*
+  Function to reset the navbar links when the user logs out.
+  It changes the "Sign in" button back to its default text and link,
+  and updates the "Login" button accordingly.
+  */
+
   const login = document.getElementById("login");
   const signin = document.getElementById("signin");
-
   signin.textContent = "Sign In";
   signin.href = "././register.html";
-
   login.textContent = "Login";
-
   login.href = "././login.html";
 }
 
 function main() {
   logo.click();
   const loggedIn = sessionStorage.getItem("isLoggedIn");
-  console.log("AAA", loggedIn)
   if (loggedIn) {
     const email = loggedIn;
     setLoginLinks(email);

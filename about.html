@@ -1,3 +1,10 @@
+<!-- 
+About Page
+This page describes what pokemon arena is and the team behind the project
+Author: Francesco Gioia
+Last Modified: 06/06/2025
+-->
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -9,99 +16,116 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
     />
-
     <link rel="stylesheet" href="assets/css/about.css" />
     <link rel="stylesheet" href="assets/css/style.css" />
-    <body>
-      <header>
-        <img src="./assets/images/pokemon_logo.png" id="pokemon-logo" />
-        <nav id="header-nav">
-          <ul id="header-nav-ul">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="game.html">Play</a></li>
-          <li><a href="about.html" class="current-selected">About</a></li>
-            <li><a href="contacts.html">Contacts</a></li>
-            <li><a href="register.html" id="signin">Sign in</a></li>
-            <li><a href="login.html" id="login">Login</a></li>
-          </ul>
-        </nav>
-      </header>
-      <div id="main-div">
-        <main>
-          <h1>About</h1>
-          <h2>Hello, Pokémon Trainer!</h2>
-          <p>
-            <strong
-              >If you're seeing this, chances are you're my professor. Hope you
-              enjoy exploring my project!</strong
-            >
-            <br /><br />For my web development exam, I wanted to create
-            something original yet technically challenging.<br />This website
-            features a fully functional Pokémon battle system, responsive
-            design, animations, and a client-side login system using browser
-            storage—all built without any backend dependencies.<br /><br />I
-            aimed to push my skills to the limit, incorporating everything I
-            could think of while ensuring the experience remains immersive and
-            engaging. <br />Thank you for checking it out—I hope it meets the
-            high standards of the Pokémon League!
-          </p>
-        </main>
-        <aside>
-          <h2>Our Team</h2>
-          <p>
-            Since this isn’t a real company, our “team” is just me.<br />But hey, at least I tried to make it fancy!
-          </p>
-          <section class="team-member">
-            <h3>🛠 Francesco Gioia</h3>
-            <p>CEO, Founder, Supreme Chief</p>
-          </section>
-
-          <section class="team-member">
-            <h3>🎮 Gioia Francesco</h3>
-            <p>Senior Pokemon Trainer Executive</p>
-          </section>
-
-          <section class="team-member">
-            <h3>💻 Francesco Gioia's Evil Twin</h3>
-            <p>Aspiring Software Engineer</p>
-          </section>
-
-          <section class="team-member">
-            <h3>🎨 Guess What? Francesco Gioia</h3>
-            <p>Web Designer</p>
-          </section>
-        </aside>
-      </div>
-      <footer>
-        <div id="footer-columns">
-          <section id="column-left">
-            <h2>Contact Us</h2>
-            <form id="footer-contact">
-              <label for="email">Email</label>
-              <input type="email" name="email" />
-              <label for="message">Message</label>
-              <textarea name="message"></textarea>
-              <div id="tos">
-                <label for="tos-checkbox"
-                  >I agree to the <a href="tos.html">terms of service</a></label
-                >
-                <input type="checkbox" name="tos-checkbox" />
-              </div>
-              <input type="submit" id="submit-button" value="Submit" />
-            </form>
-          </section>
-          <section id="column-right">
-            <nav>
-              <ul>
-                <li><a href="about.html">About</a></li>
-                <li><a href="contacts.html">Contacts</a></li>
-                <li><a href="privacy.html">Privacy</a></li>
-              </ul>
-            </nav>
-          </section>
-        </div>
-      </footer>
-      <script src="assets/js/scripts.js"></script>
-    </body>
   </head>
+
+  <body>
+    <header>
+      <img
+        src="./assets/images/pokemon_logo.png"
+        id="pokemon-logo"
+        alt="Pokemon Logo"
+      />
+      <nav id="header-nav" aria-label="Main navigation">
+        <ul id="header-nav-ul">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="game.html">Play</a></li>
+          <li><a href="about.html" class="current-selected">About</a></li>
+          <li><a href="contacts.html">Contacts</a></li>
+          <li><a href="register.html" id="signin">Sign in</a></li>
+          <li><a href="login.html" id="login">Login</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <div id="main-div">
+      <main>
+        <h1>About</h1>
+        <h2>Hello, Pokémon Trainer!</h2>
+        <p>
+          <strong
+            >If you're seeing this, chances are you're my professor. Hope you
+            enjoy exploring my project!</strong
+          >
+          <br /><br />For my web development exam, I wanted to create something
+          original yet technically challenging.<br />This website features a
+          fully functional Pokémon battle system, responsive design, animations,
+          and a client-side login system using browser storage—all built without
+          any backend dependencies.<br /><br />I aimed to push my skills to the
+          limit, incorporating everything I could think of while ensuring the
+          experience remains immersive and engaging. <br />Thank you for
+          checking it out—I hope it meets the high standards of the Pokémon
+          League!
+        </p>
+      </main>
+
+      <aside>
+        <h2>Our Team</h2>
+        <p>
+          Since this isn’t a real company, our “team” is just me.<br />But hey,
+          at least I tried to make it fancy!
+        </p>
+        <section class="team-member">
+          <h3>🛠 Francesco Gioia</h3>
+          <p>CEO, Founder, Supreme Chief</p>
+        </section>
+
+        <section class="team-member">
+          <h3>🎮 Gioia Francesco</h3>
+          <p>Senior Pokemon Trainer Executive</p>
+        </section>
+
+        <section class="team-member">
+          <h3>💻 Francesco Gioia's Evil Twin</h3>
+          <p>Aspiring Software Engineer</p>
+        </section>
+
+        <section class="team-member">
+          <h3>🎨 Guess What? Francesco Gioia</h3>
+          <p>Web Designer</p>
+        </section>
+      </aside>
+    </div>
+
+    <footer>
+      <div id="footer-columns">
+        <section id="column-left">
+          <h2>Contact Us</h2>
+          <form id="footer-contact">
+            <label for="email">Email</label>
+            <input type="email" name="email" aria-label="Enter your email" />
+            <label for="message">Message</label>
+            <textarea name="message" aria-label="Enter your message"></textarea>
+            <div id="tos">
+              <label for="tos-checkbox"
+                >I agree to the
+                <a href="tos.html" aria-label="Agree to our Terms of Service"
+                  >terms of service</a
+                ></label
+              >
+              <input type="checkbox" name="tos-checkbox" />
+            </div>
+            <input
+              type="submit"
+              id="submit-button"
+              value="Submit"
+              aria-label="submit the form"
+            />
+          </form>
+        </section>
+        <section id="column-right">
+          <nav>
+            <ul>
+              <li><a href="about.html">About</a></li>
+              <li><a href="contacts.html">Contacts</a></li>
+              <li><a href="privacy.html">Privacy</a></li>
+            </ul>
+          </nav>
+        </section>
+      </div>
+    </footer>
+
+    <script src="assets/js/scripts.js"></script>
+  </body>
 </html>
