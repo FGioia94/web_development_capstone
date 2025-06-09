@@ -132,10 +132,11 @@ footer {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
+    align-items: left;
   }
   #submit-button {
     width: 80%;
     border-radius: 1em;
   }
+  #column-left {width: 50%;}
 }
